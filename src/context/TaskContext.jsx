@@ -24,6 +24,15 @@ export function TaskContextProvider(props) {
     setTasks(tasks.filter((task) => task.id !== taskId));
   }
 
+  function writeTasks(updatedTasks) {
+    try {
+      const tasksData = `export const tasks = ${JSON.stringify(updatedTasks)};`;
+      fs.writeFileSync('./data/tasks.js', tasksData);
+    } catch (error) {
+      console.error('Error al escribir las tareas:', error);
+    }
+  }
+
   return (
     <TaskContext.Provider
       value={{

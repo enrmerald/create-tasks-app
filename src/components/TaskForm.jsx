@@ -33,7 +33,7 @@ function TaskForm() {
           value={description}
           className="bg-slate-300 p-3 w-full mb-2"
         />
-        <button className="bg-indigo-500 px-3 py-1 text-white">
+        <button className="bg-indigo-500 px-3 py-1 text-white hover:bg-indigo-300">
           Guardar
         </button>
       </form>
